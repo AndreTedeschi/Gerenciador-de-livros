@@ -7,7 +7,7 @@ const Livro = require('./models/livro')
 
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://user:Jubarte0507@cluster0.rzu8o.mongodb.net/gerenciador?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://user:<password>L0507@cluster0.rzu8o.mongodb.net/<dbname>?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
