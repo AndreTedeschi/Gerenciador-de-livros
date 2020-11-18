@@ -11,9 +11,7 @@ import { LivroService } from '../livro.service';
 })
 export class InserirLivroComponent {
     constructor(public livroService: LivroService) {
-
     }
-  
 
     onAdicionarLivro(form: NgForm) {
         if(form.invalid) return;
