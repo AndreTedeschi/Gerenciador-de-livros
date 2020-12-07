@@ -1,1 +1,10 @@
-<mat-toolbar color="primary">Livros</mat-toolbar>
+<mat-toolbar color="warn">
+    <span><a routerLink="/">Livros</a></span>
+    <span class="separador"></span>
+    <ul>
+      <li>
+        <a mat-button routerLink="/criar" routerLinkActive="mat-accent">Novo Lembrete</a>
+        <a mat-button routerLink="/lista" routerLinkActive="mat-accent">Meus lembretes</a>
+      </li>
+    </ul>
+  </mat-toolbar>

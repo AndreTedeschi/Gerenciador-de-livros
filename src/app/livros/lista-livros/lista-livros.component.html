@@ -1,22 +1,16 @@
-<mat-accordion>
-
-    <mat-expansion-panel *ngFor="let livro of livros">
-
-        <mat-expansion-panel-header> Título: {{ livro.titulo }} </mat-expansion-panel-header>
-
-        <p>Autor: {{ livro.autor }}</p>
-        <p>Id: {{ livro.id }}</p>
-        <p>N° de páginas: {{ livro.paginas }}</p>
-
-        <mat-action-row>
-            <button mat-button color="primary">EDITAR</button>
-            <button mat-button color="warn">REMOVER</button>
-          </mat-action-row>
-      
-    </mat-expansion-panel>
-
+<mat-spinner diameter="70" *ngIf="estaCarregando"></mat-spinner>
+<mat-accordion *ngIf="livros.length > 0 && !estaCarregando">
+  <mat-expansion-panel *ngFor="let livro of livros">
+    <mat-expansion-panel-header>Título: {{ livro.titulo }}</mat-expansion-panel-header>
+    <p>Autor(a): {{livro.autor}}</p>
+    <p>N° e páginas: {{ livro.paginas }}</p>
+    <hr />
+    <mat-action-row>
+      <a mat-button color="primary" [routerLink]="['/editar', livro.id]">EDITAR</a>
+      <button mat-button color="warn" (click)="onDelete(livro.id)">REMOVER</button>
+    </mat-action-row>
+  </mat-expansion-panel>
 </mat-accordion>
-
-<p *ngIf="livros.length <= 0">
-    Nenhum livro inserido!!
+<p class="mat-body-1" style="text-align: center;" *ngIf="livros.length <= 0 && !estaCarregando">
+  Nenhum livro 
 </p>
